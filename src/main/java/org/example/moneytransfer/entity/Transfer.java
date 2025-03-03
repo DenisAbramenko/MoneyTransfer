@@ -1,4 +1,4 @@
-package org.example.moneytransfer.dto;
+package org.example.moneytransfer.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
