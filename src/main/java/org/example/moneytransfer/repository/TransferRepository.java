@@ -1,6 +1,6 @@
 package org.example.moneytransfer.repository;
 
-import org.example.moneytransfer.dto.Transfer;
+import org.example.moneytransfer.entity.Transfer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
