@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 public class Transfer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     @Column(name = "card_from_number", nullable = false)
     private String cardFromNumber;
@@ -31,6 +31,6 @@ public class Transfer {
     @Column(name = "transfer_date", nullable = false)
     private LocalDateTime transferDate;
 
-    @Column(name = "status", nullable = false)
-    private String status; // Status: SUCCESS, PENDING, FAILED
+    @Column(name = "operation_id", nullable = false)
+    private String operationId;
 }
