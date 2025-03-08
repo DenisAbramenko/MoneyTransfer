@@ -2,6 +2,7 @@ package org.example.moneytransfer.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
