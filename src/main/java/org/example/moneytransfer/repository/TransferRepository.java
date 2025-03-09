@@ -8,6 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface TransferRepository extends JpaRepository<Transfer, Long> {
-    @Override
     Optional<Transfer> findById(Long id);
 }
