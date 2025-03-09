@@ -5,7 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public class Cards {
+public class Card {
     @Id
     @Column(name = "number")
     private String number;
