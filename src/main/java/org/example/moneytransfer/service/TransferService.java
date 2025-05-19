@@ -4,6 +4,7 @@ import org.example.moneytransfer.entity.Card;
 import org.example.moneytransfer.entity.ConfirmOperation;
 import org.example.moneytransfer.entity.Transfer;
 import org.example.moneytransfer.exception.InputDataException;
+import org.example.moneytransfer.exception.TransferException;
 import org.example.moneytransfer.repository.CardRepository;
 import org.example.moneytransfer.repository.TransferRepository;
 import org.slf4j.Logger;
@@ -39,11 +40,18 @@ public class TransferService {
         // Проверка карт
         Optional<Card> cardFrom = cardRepository.findByCardNumber(request.getCardFromNumber());
         Optional<Card> cardTo = cardRepository.findByCardNumber(request.getCardToNumber());
-        if (cardFrom.isPresent() == false || cardTo.isPresent() == false) {
+        if (cardFrom.isEmpty() || cardTo.isEmpty()) {
             throw new InputDataException("Invalid card number");
         }
 
-        //todo Проверка баланса отправителя
+        int cardFromBalance = cardFrom.get().getBalance();
+        int cardToBalance = cardTo.get().getBalance();
+        double amountTransfer = request.getAmountValue() + request.getCommission();
+
+        // Проверка баланса отправителя
+        if (cardFromBalance < amountTransfer){
+            throw new TransferException("There is not enough balance for the transfer");
+        }
 
         //todo Выполнение перевода денежных средств
 
