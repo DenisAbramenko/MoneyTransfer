@@ -17,11 +17,17 @@ public class Transfer {
     @Column(name = "card_from_number", nullable = false)
     private String cardFromNumber;
 
+    @Column(name = "card_from_valid_till", nullable = false)
+    private String cardFromValidTill;
+
+    @Column(name = "card_from_cvv", nullable = false)
+    private String cardFromCVV;
+
     @Column(name = "card_to_number", nullable = false)
     private String cardToNumber;
 
     @Column(name = "amount_value", nullable = false)
-    private int amountValue;
+    private Integer amountValue;
 
     @Column(name = "amount_currency", nullable = false)
     private String amountCurrency;
@@ -34,4 +40,7 @@ public class Transfer {
 
     @Column(name = "operation_id", nullable = false)
     private String operationId;
+    
+    @Column(name = "status", nullable = false)
+    private String status = "PENDING";
 }

@@ -9,4 +9,5 @@ import java.util.Optional;
 @Repository
 public interface TransferRepository extends JpaRepository<Transfer, Long> {
     Optional<Transfer> findById(Long id);
+    Optional<Transfer> findByOperationId(String operationId);
 }

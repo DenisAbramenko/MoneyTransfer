@@ -1,0 +1,55 @@
+2025-06-07T22:24:33.600+03:00  INFO 12960 --- [MoneyTransfer] [restartedMain] o.e.m.MoneyTransferApplication           : Starting MoneyTransferApplication using Java 23.0.2 with PID 12960 (C:\Dev\Projects\MoneyTransfer\target\classes started by den-a in C:\Dev\Projects\MoneyTransfer)
+2025-06-07T22:24:33.601+03:00  INFO 12960 --- [MoneyTransfer] [restartedMain] o.e.m.MoneyTransferApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-06-07T22:24:33.634+03:00  INFO 12960 --- [MoneyTransfer] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-06-07T22:24:33.634+03:00  INFO 12960 --- [MoneyTransfer] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-07T22:24:33.643+03:00  INFO 12960 --- [MoneyTransfer] [restartedMain] .s.b.d.c.l.DockerComposeLifecycleManager : Using Docker Compose file C:\Dev\Projects\MoneyTransfer\compose.yaml
+2025-06-07T22:24:33.765+03:00 ERROR 12960 --- [MoneyTransfer] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.boot.docker.compose.core.DockerProcessStartException: Unable to start docker process. Is docker correctly installed?
+	at org.springframework.boot.docker.compose.core.DockerCli$DockerCommands.getDockerCommand(DockerCli.java:151) ~[spring-boot-docker-compose-3.4.3.jar:3.4.3]
+	at org.springframework.boot.docker.compose.core.DockerCli$DockerCommands.<init>(DockerCli.java:140) ~[spring-boot-docker-compose-3.4.3.jar:3.4.3]
+	at org.springframework.boot.docker.compose.core.DockerCli.lambda$new$0(DockerCli.java:66) ~[spring-boot-docker-compose-3.4.3.jar:3.4.3]
+	at java.base/java.util.HashMap.computeIfAbsent(HashMap.java:1229) ~[na:na]
+	at org.springframework.boot.docker.compose.core.DockerCli.<init>(DockerCli.java:65) ~[spring-boot-docker-compose-3.4.3.jar:3.4.3]
+	at org.springframework.boot.docker.compose.core.DockerCompose.get(DockerCompose.java:145) ~[spring-boot-docker-compose-3.4.3.jar:3.4.3]
+	at org.springframework.boot.docker.compose.lifecycle.DockerComposeLifecycleManager.getDockerCompose(DockerComposeLifecycleManager.java:166) ~[spring-boot-docker-compose-3.4.3.jar:3.4.3]
+	at org.springframework.boot.docker.compose.lifecycle.DockerComposeLifecycleManager.start(DockerComposeLifecycleManager.java:114) ~[spring-boot-docker-compose-3.4.3.jar:3.4.3]
+	at org.springframework.boot.docker.compose.lifecycle.DockerComposeListener.onApplicationEvent(DockerComposeListener.java:53) ~[spring-boot-docker-compose-3.4.3.jar:3.4.3]
+	at org.springframework.boot.docker.compose.lifecycle.DockerComposeListener.onApplicationEvent(DockerComposeListener.java:35) ~[spring-boot-docker-compose-3.4.3.jar:3.4.3]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.context.event.EventPublishingRunListener.contextLoaded(EventPublishingRunListener.java:98) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$contextLoaded$4(SpringApplicationRunListeners.java:72) ~[spring-boot-3.4.3.jar:3.4.3]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplicationRunListeners.contextLoaded(SpringApplicationRunListeners.java:72) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:416) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:317) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.example.moneytransfer.MoneyTransferApplication.main(MoneyTransferApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.4.3.jar:3.4.3]
+Caused by: org.springframework.boot.docker.compose.core.ProcessStartException: Unable to start command docker version --format {{.Client.Version}}
+	at org.springframework.boot.docker.compose.core.ProcessRunner.startProcess(ProcessRunner.java:116) ~[spring-boot-docker-compose-3.4.3.jar:3.4.3]
+	at org.springframework.boot.docker.compose.core.ProcessRunner.run(ProcessRunner.java:88) ~[spring-boot-docker-compose-3.4.3.jar:3.4.3]
+	at org.springframework.boot.docker.compose.core.ProcessRunner.run(ProcessRunner.java:75) ~[spring-boot-docker-compose-3.4.3.jar:3.4.3]
+	at org.springframework.boot.docker.compose.core.DockerCli$DockerCommands.getDockerCommand(DockerCli.java:146) ~[spring-boot-docker-compose-3.4.3.jar:3.4.3]
+	... 28 common frames omitted
+Caused by: java.io.IOException: Cannot run program "docker": CreateProcess error=2, Не удается найти указанный файл
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1170) ~[na:na]
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1089) ~[na:na]
+	at org.springframework.boot.docker.compose.core.ProcessRunner.startProcess(ProcessRunner.java:106) ~[spring-boot-docker-compose-3.4.3.jar:3.4.3]
+	... 31 common frames omitted
+Caused by: java.io.IOException: CreateProcess error=2, Не удается найти указанный файл
+	at java.base/java.lang.ProcessImpl.create(Native Method) ~[na:na]
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:506) ~[na:na]
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:159) ~[na:na]
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1126) ~[na:na]
+	... 33 common frames omitted
+
